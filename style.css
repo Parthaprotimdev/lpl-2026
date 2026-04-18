@@ -96,6 +96,34 @@ nav a:hover {
 .hero-text button:hover {
   transform: scale(1.1);
 }
+.prize-box {
+  margin-top: 10px;
+}
+
+.prize-box img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.prize h3 {
+  color: gold;
+  margin-top: 5px;
+}
+
+.prize p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* extra responsive fix */
+@media (max-width: 768px) {
+  .prize-box img {
+    height: 150px;
+  }
+}
 
 /* CARDS */
 .cards {
@@ -224,5 +252,121 @@ footer {
 
   .form input {
     width: 85%;
+  }
+}
+.prize-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: radial-gradient(circle at top, #111827, #05070f);
+}
+
+.title {
+  font-size: 32px;
+  color: gold;
+  margin-bottom: 40px;
+}
+
+/* container */
+.prize-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* card */
+.prize-card {
+  position: relative;
+  width: 280px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+/* hover */
+.prize-card:hover {
+  transform: translateY(-15px) scale(1.05);
+}
+
+/* image */
+.prize-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* text */
+.prize-card h3 {
+  color: gold;
+  margin-top: 15px;
+}
+
+.prize-card p {
+  color: #ccc;
+}
+
+/* champion glow */
+.champion {
+  border: 2px solid gold;
+  animation: glow 2s infinite alternate;
+}
+
+/* runner up */
+.runnerup {
+  border: 2px solid silver;
+}
+
+/* shine effect */
+.shine {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: shineMove 3s infinite;
+}
+
+/* animations */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px gold;
+  }
+  to {
+    box-shadow: 0 0 30px gold;
+  }
+}
+
+@keyframes shineMove {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .prize-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .prize-card {
+    width: 90%;
   }
 }
