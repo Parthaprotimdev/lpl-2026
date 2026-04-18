@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LPL 2026</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="logo" />
+        <h2>LPL 2026</h2>
+      </div>
+
+      <div class="menu">☰</div>
+
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Tournament</a>
+        <a href="#">Live</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>LOSMONPUR PREMIER LEAGUE</h1>
+        <p>Official Cricket Tournament 2026</p>
+        <button>Register Now</button>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="cards">
+      <div class="card">🏆 Prize<br /><span>50,000৳</span></div>
+      <div class="card">📅 Format<br /><span>T20</span></div>
+      <div class="card">👥 Teams<br /><span>16 Teams</span></div>
+    </section>
+
+    <!-- LIVE MATCH -->
+    <section class="live">
+      <h2>🔥 Live Match</h2>
+      <h3 id="match">Tigers vs Lions</h3>
+      <p id="score">0/0</p>
+    </section>
+
+    <!-- REGISTRATION -->
+    <section class="form">
+      <h2>Team Registration</h2>
+
+      <input id="team" placeholder="Team Name" />
+      <input id="captain" placeholder="Captain Name" />
+      <input id="phone" placeholder="Phone" />
+
+      <button onclick="registerTeam()">Submit</button>
+    </section>
+
+    <footer>© 2026 LPL - Losmonpur Premier League</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

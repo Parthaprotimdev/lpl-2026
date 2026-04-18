@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0b0f1a;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 45px;
+  margin-right: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: gold;
+  transform: scale(1.1);
+}
+
+/* MENU ICON */
+.menu {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+    url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e")
+      center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-text h1 {
+  font-size: 55px;
+  color: gold;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero-text p {
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.hero-text button {
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.hero-text button:hover {
+  transform: scale(1.1);
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: linear-gradient(145deg, #111827, #0f172a);
+  padding: 25px;
+  width: 220px;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid gold;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* LIVE */
+.live {
+  text-align: center;
+  padding: 40px;
+  background: #020617;
+}
+
+.live h2 {
+  color: gold;
+}
+
+#score {
+  font-size: 30px;
+  margin-top: 10px;
+  color: #00ff99;
+}
+
+/* FORM */
+.form {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.form input {
+  display: block;
+  margin: 12px auto;
+  padding: 12px;
+  width: 280px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.form button {
+  padding: 12px 30px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  transform: scale(1.1);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+  color: #aaa;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: black;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .hero-text h1 {
+    font-size: 30px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 85%;
+  }
+
+  .form input {
+    width: 85%;
+  }
+}
