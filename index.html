@@ -8,9 +8,10 @@
   </head>
 
   <body>
+    <!-- NAVBAR -->
     <header class="navbar">
       <div class="logo">
-        <img src="images/logo.png" alt="logo" />
+        <img src="images/logo.png" alt="LPL Logo" />
         <h2>LPL 2026</h2>
       </div>
 
@@ -29,38 +30,55 @@
       <div class="hero-text">
         <h1>LOSMONPUR PREMIER LEAGUE</h1>
         <p>Official Cricket Tournament 2026</p>
-        <button>Register Now</button>
+
+        <button
+          onclick="document.querySelector('.form').scrollIntoView({behavior:'smooth'})"
+        >
+          Register Now
+        </button>
       </div>
     </section>
 
-    <!-- CARDS -->
+    <!-- PRIZES -->
     <section class="prize-section">
       <h2 class="title">🏆 Tournament Prizes</h2>
 
       <div class="prize-container">
-        <!-- CHAMPION -->
-        <div class="prize-card champion">
-          <div class="shine"></div>
-          <img src="images/champion-fridge.jpg" alt="Champion Prize" />
+        <div class="prize-card">
+          <img src="images/champion-fridge.jpg" />
           <h3>CHAMPION</h3>
-          <p>LARGE PREMIUM FRIDGE</p>
+          <p>Large Premium Fridge</p>
         </div>
 
-        <!-- RUNNER UP -->
-        <div class="prize-card runnerup">
-          <div class="shine"></div>
-          <img src="images/runnerup-fridge.jpg" alt="Runner Up Prize" />
+        <div class="prize-card">
+          <img src="images/runnerup-fridge.jpg" />
           <h3>RUNNER UP</h3>
-          <p>SMALL PREMIUM FRIDGE</p>
+          <p>Small Premium Fridge</p>
         </div>
       </div>
     </section>
 
     <!-- LIVE MATCH -->
     <section class="live">
-      <h2>🔥 Live Match</h2>
-      <h3 id="match">Tigers vs Lions</h3>
-      <p id="score">0/0</p>
+      <h2>🔥 LIVE MATCH</h2>
+
+      <div class="scoreboard">
+        <div class="team">
+          <h3 id="teamA">Ward 08</h3>
+          <p id="scoreA">0</p>
+        </div>
+
+        <div class="vs">VS</div>
+
+        <div class="team">
+          <h3 id="teamB">Ward 05</h3>
+          <p id="scoreB">0</p>
+        </div>
+      </div>
+
+      <p class="overs" id="overs">Overs: 0.0</p>
+
+      <div class="live-badge">● LIVE</div>
     </section>
 
     <!-- REGISTRATION -->
@@ -72,6 +90,9 @@
       <input id="phone" placeholder="Phone" />
 
       <button onclick="registerTeam()">Submit</button>
+      <button onclick="adminLogin()">🔐 Admin Login</button>
+
+      <div id="teamList"></div>
     </section>
 
     <footer>© 2026 LPL - Losmonpur Premier League</footer>

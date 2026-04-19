@@ -1,4 +1,5 @@
-/* RESET */
+
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +22,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 25px;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -31,29 +32,28 @@ body {
 .logo {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .logo img {
-  width: 45px;
-  margin-right: 10px;
+  width: 40px;
 }
 
-/* DESKTOP NAV */
-nav {
+/* NAV */
+.nav-links {
   display: flex;
   gap: 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
   transition: 0.3s;
 }
 
-nav a:hover {
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
   color: gold;
-  transform: scale(1.1);
 }
 
 /* MENU ICON */
@@ -61,117 +61,168 @@ nav a:hover {
   display: none;
   font-size: 28px;
   cursor: pointer;
-  color: white;
 }
 
 /* ================= HERO ================= */
 .hero {
-  height: 90vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
-    url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e")
-      center/cover no-repeat;
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  background: url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e")
+    center/cover;
 }
 
 .hero-text h1 {
-  font-size: 55px;
+  font-size: 45px;
   color: gold;
-  animation: fadeIn 1.5s ease;
-}
-
-.hero-text p {
-  margin-top: 10px;
-  color: #ccc;
+  animation: fadeIn 1s ease;
 }
 
 .hero-text button {
   margin-top: 20px;
-  padding: 12px 28px;
+  padding: 12px 25px;
   background: gold;
   border: none;
-  cursor: pointer;
   font-weight: bold;
-  border-radius: 5px;
-  transition: 0.3s;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.hero-text button:hover {
-  transform: scale(1.1);
-}
-
-/* ================= CARDS ================= */
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  padding: 50px 20px;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: linear-gradient(145deg, #111827, #0f172a);
-  padding: 25px;
-  width: 220px;
-  text-align: center;
-  border-radius: 12px;
-  border: 1px solid gold;
-  transition: 0.3s;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-}
-
-.card:hover {
-  transform: translateY(-10px);
-}
-
-/* ================= LIVE ================= */
+/* ================= LIVE MATCH ================= */
 .live {
   text-align: center;
-  padding: 40px;
-  background: #020617;
+  padding: 50px 20px;
+  background: #111827;
 }
 
-.live h2 {
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.team {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid gold;
+  width: 150px;
+}
+
+.team p {
+  font-size: 35px;
+  color: #00ff99;
+  font-weight: bold;
+}
+
+.vs {
+  font-size: 22px;
   color: gold;
 }
 
-#score {
-  font-size: 30px;
+/* LIVE BADGE */
+.live-badge {
   margin-top: 10px;
-  color: #00ff99;
+  color: red;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {opacity:1;}
+  50% {opacity:0.5;}
+  100% {opacity:1;}
 }
 
 /* ================= FORM ================= */
 .form {
   text-align: center;
-  padding: 50px 20px;
+  padding: 40px 20px;
 }
 
 .form input {
   display: block;
-  margin: 12px auto;
+  margin: 10px auto;
   padding: 12px;
-  width: 280px;
+  width: 300px;
+  max-width: 90%;
   border-radius: 6px;
   border: none;
   outline: none;
 }
 
+/* BUTTONS */
 .form button {
-  padding: 12px 30px;
-  background: gold;
+  display: block;
+  margin: 10px auto;
+  padding: 12px;
+  width: 300px;
+  max-width: 90%;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 5px;
   transition: 0.3s;
 }
 
 .form button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+/* SUBMIT BUTTON */
+.form button:first-of-type {
+  background: gold;
+  color: black;
+}
+
+/* ADMIN BUTTON */
+.form button:last-of-type {
+  background: linear-gradient(45deg, red, orange);
+  color: white;
+}
+
+/* TEAM LIST */
+#teamList div {
+  background: #111;
+  margin: 10px auto;
+  padding: 10px;
+  width: 300px;
+  border: 1px solid gold;
+  border-radius: 6px;
+}
+
+/* ================= PRIZE ================= */
+.prize-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.prize-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.prize-card {
+  width: 260px;
+  background: #111;
+  padding: 15px;
+  border: 1px solid gold;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.prize-card:hover {
+  transform: translateY(-10px);
+}
+
+.prize-card img {
+  width: 100%;
 }
 
 /* ================= FOOTER ================= */
@@ -182,173 +233,71 @@ footer {
   color: #aaa;
 }
 
-/* ================= PRIZE SECTION ================= */
-.prize-section {
-  padding: 60px 20px;
-  text-align: center;
-  background: radial-gradient(circle at top, #111827, #05070f);
-}
-
-.title {
-  font-size: 32px;
-  color: gold;
-  margin-bottom: 40px;
-}
-
-.prize-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.prize-card {
-  position: relative;
-  width: 280px;
-  padding: 20px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 215, 0, 0.4);
-  transition: 0.4s;
-  overflow: hidden;
-}
-
-.prize-card:hover {
-  transform: translateY(-15px) scale(1.05);
-}
-
-.prize-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  padding: 10px;
-}
-
-.prize-card h3 {
-  color: gold;
-  margin-top: 15px;
-}
-
-.prize-card p {
-  color: #ccc;
-}
-
-.champion {
-  border: 2px solid gold;
-  animation: glow 2s infinite alternate;
-}
-
-.runnerup {
-  border: 2px solid silver;
-}
-
-.shine {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transform: rotate(25deg);
-  animation: shineMove 3s infinite;
-}
-
 /* ================= ANIMATION ================= */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 
-@keyframes glow {
-  from {
-    box-shadow: 0 0 10px gold;
-  }
-  to {
-    box-shadow: 0 0 30px gold;
-  }
-}
-
-@keyframes shineMove {
-  0% {
-    transform: translateX(-100%) rotate(25deg);
-  }
-  100% {
-    transform: translateX(100%) rotate(25deg);
-  }
-}
-
-/* ================= RESPONSIVE (ONLY ONE CLEAN VERSION) ================= */
+/* ================= MOBILE MENU PRO ================= */
 @media (max-width: 768px) {
+
   .menu {
     display: block;
   }
 
-  nav {
+  .nav-links {
     position: fixed;
     top: 70px;
-    right: -220px;
+    right: -260px;
     width: 200px;
-    max-height: 300px;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(12px);
+
+    display: flex;
     flex-direction: column;
-    padding: 15px;
-    gap: 10px;
-    transition: 0.35s ease;
+    align-items: center;
+
+    gap: 8px;
+    padding: 12px 10px;
+
     border-left: 2px solid gold;
-    border-radius: 10px 0 0 10px;
+    border-radius: 12px 0 0 12px;
+
+    transition: 0.35s ease;
+    z-index: 9999;
   }
 
-  nav.active {
+  .nav-links.active {
     right: 10px;
   }
 
-  nav a {
-    padding: 8px 10px;
-    border-radius: 6px;
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    font-size: 14px;
   }
 
-  nav a:hover {
-    background: rgba(255, 215, 0, 0.1);
+  .nav-links a:hover {
+    background: rgba(255, 215, 0, 0.12);
   }
 
   .hero-text h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
-  .cards {
+  .scoreboard {
     flex-direction: column;
-    align-items: center;
   }
 
-  .card {
-    width: 85%;
+  #teamList div {
+    width: 90%;
   }
 
-  .form input {
-    width: 85%;
-  }
-
-  .prize-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .prize-card {
+  .form input,
+  .form button {
     width: 90%;
   }
 }

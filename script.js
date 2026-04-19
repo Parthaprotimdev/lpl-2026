@@ -1,58 +1,66 @@
-// ================= TEAM REGISTRATION =================
-function registerTeam() {
-  const team = document.getElementById("team").value.trim();
-  const captain = document.getElementById("captain").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-
-  if (!team || !captain || !phone) {
-    alert("⚠️ Please fill all fields!");
-    return;
-  }
-
-  if (phone.length < 11) {
-    alert("⚠️ Enter valid phone number!");
-    return;
-  }
-
-  alert(
-    "✅ Team Registered Successfully!\n\n" +
-      "Team: " +
-      team +
-      "\n" +
-      "Captain: " +
-      captain +
-      "\n" +
-      "Phone: " +
-      phone
-  );
-
-  document.getElementById("team").value = "";
-  document.getElementById("captain").value = "";
-  document.getElementById("phone").value = "";
-}
-
-// ================= MOBILE MENU =================
+// ================= MENU =================
 const menu = document.querySelector(".menu");
-const nav = document.querySelector("nav");
+const nav = document.querySelector(".nav-links");
 
 if (menu && nav) {
-  // toggle menu
   menu.addEventListener("click", (e) => {
     nav.classList.toggle("active");
     e.stopPropagation();
   });
 
-  // close on outside click
   document.addEventListener("click", (e) => {
     if (!nav.contains(e.target) && !menu.contains(e.target)) {
       nav.classList.remove("active");
     }
   });
 
-  // close on link click
-  document.querySelectorAll("nav a").forEach((link) => {
+  document.querySelectorAll(".nav-links a").forEach((link) => {
     link.addEventListener("click", () => {
       nav.classList.remove("active");
     });
   });
 }
+
+// ================= TEAM REGISTRATION =================
+function registerTeam() {
+  const team = document.getElementById("team");
+  const captain = document.getElementById("captain");
+  const phone = document.getElementById("phone");
+
+  if (!team.value || !captain.value || !phone.value) {
+    alert("Fill all fields!");
+    return;
+  }
+
+  const div = document.createElement("div");
+  div.innerText = `${team.value} - ${captain.value} - ${phone.value}`;
+  document.getElementById("teamList").appendChild(div);
+
+  team.value = "";
+  captain.value = "";
+  phone.value = "";
+}
+
+// ================= ADMIN =================
+function adminLogin() {
+  const pass = prompt("Enter Admin Password");
+
+  if (pass === "1234") {
+    alert("Welcome Admin!");
+  } else {
+    alert("Wrong Password!");
+  }
+}
+
+// ================= LIVE SCORE =================
+setInterval(() => {
+  const scoreA = document.getElementById("scoreA");
+  const scoreB = document.getElementById("scoreB");
+  const overs = document.getElementById("overs");
+
+  if (scoreA && scoreB && overs) {
+    scoreA.innerText = Math.floor(Math.random() * 150);
+    scoreB.innerText = Math.floor(Math.random() * 150);
+    overs.innerText = "Overs: " + (Math.random() * 20).toFixed(1);
+  }
+}, 4000);
