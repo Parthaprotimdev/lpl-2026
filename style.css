@@ -229,6 +229,97 @@ body {
 .prize-card img {
   width: 100%;
 }
+/* ================= COMMITTEE SECTION ================= */
+
+.committee {
+  position: fixed;
+  top: 70px; /* navbar height space */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px);
+
+  background: rgba(0, 0, 0, 0.95);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 9999;
+  padding: 20px;
+  overflow-y: auto;
+  animation: fadeIn 0.25s ease-out;
+  transform-origin: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.committee h2 {
+  color: gold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 15px;
+  width: 95%;
+  max-width: 1000px;
+}
+
+.member {
+  background: #111827;
+  border: 1px solid gold;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px gold;
+}
+
+.member img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid gold;
+  margin-bottom: 10px;
+}
+
+.member h3 {
+  color: gold;
+  font-size: 15px;
+}
+
+.member p {
+  color: white;
+  font-size: 14px;
+}
+
+.member span {
+  color: #00ff99;
+  font-size: 13px;
+}
+
+.close-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
 /* ================= FOOTER ================= */
 footer {
@@ -239,7 +330,7 @@ footer {
 }
 
 /* ================= ANIMATION ================= */
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(-20px);
@@ -247,6 +338,21 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+} */
+/* ANIMATION */
+.committee {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -309,6 +415,11 @@ footer {
   .form input,
   .form button {
     width: 90%;
+  }
+  .committee {
+    top: 60px;
+    height: calc(100% - 60px);
+    padding-top: 30px;
   }
 }
 /* ================= FOOTER PRO MAX ================= */

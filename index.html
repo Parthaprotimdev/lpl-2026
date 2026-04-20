@@ -21,6 +21,9 @@
         <a href="#">Home</a>
         <a href="#">Tournament</a>
         <a href="#">Live</a>
+
+        <a href="#" onclick="openCommittee()">Committee</a>
+
         <a href="#">Contact</a>
       </nav>
     </header>
@@ -94,7 +97,70 @@
 
       <div id="teamList"></div>
     </section>
+    <!-- COMMITTEE SECTION -->
+    <section id="committeeSection" class="committee hidden">
+      <h2>🏏 LPL 2026 Committee Members</h2>
 
+      <div class="committee-grid">
+        <div class="member">
+          <img src="images/president.jpg" />
+          <h3>President</h3>
+          <p>John Doe</p>
+          <span>📞 017XXXXXXXX</span>
+        </div>
+
+        <div class="member">
+          <img src="images/vice1.jpg" />
+          <h3>Vice President</h3>
+          <p>Alex Rahman</p>
+          <span>📞 018XXXXXXXX</span>
+        </div>
+
+        <div class="member">
+          <img src="images/vice2.jpg" />
+          <h3>Vice President</h3>
+          <p>Rahim Uddin</p>
+          <span>📞 019XXXXXXXX</span>
+        </div>
+
+        <div class="member">
+          <img src="images/secretary.jpg" />
+          <h3>Secretary</h3>
+          <p>Karim Khan</p>
+          <span>📞 016XXXXXXXX</span>
+        </div>
+
+        <div class="member">
+          <img src="images/joint.jpg" />
+          <h3>Joint Secretary</h3>
+          <p>Sabbir Hossain</p>
+          <span>📞 017XXXXXXXX</span>
+        </div>
+
+        <div class="member">
+          <img src="images/organizer.jpg" />
+          <h3>Organizing Secretary</h3>
+          <p>Mahin Islam</p>
+          <span>📞 015XXXXXXXX</span>
+        </div>
+
+        <div class="member">
+          <img src="images/treasurer.jpg" />
+          <h3>Treasurer</h3>
+          <p>Rafi Ahmed</p>
+          <span>📞 013XXXXXXXX</span>
+        </div>
+
+        <div class="member">
+          <img src="images/member.jpg" />
+          <h3>Member Secretary</h3>
+          <p>Hasan Ali</p>
+          <span>📞 014XXXXXXXX</span>
+        </div>
+      </div>
+
+      <button class="close-btn" onclick="closeCommittee()">Close</button>
+    </section>
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-box">

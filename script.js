@@ -20,6 +20,15 @@ if (menu && nav) {
     });
   });
 }
+function openCommittee() {
+  alert(
+    "🏏 LPL 2026 Committee:\n\n" +
+      "President: John Doe\n" +
+      "Vice President: Alex\n" +
+      "Manager: Rahim\n" +
+      "Coordinator: Karim"
+  );
+}
 
 // ================= TEAM REGISTRATION =================
 function registerTeam() {
@@ -64,3 +73,12 @@ setInterval(() => {
     overs.innerText = "Overs: " + (Math.random() * 20).toFixed(1);
   }
 }, 4000);
+function openCommittee() {
+  document.getElementById("committeeSection").classList.remove("hidden");
+  document.getElementById("committeeSection").classList.add("show");
+}
+
+function closeCommittee() {
+  document.getElementById("committeeSection").classList.add("hidden");
+  document.getElementById("committeeSection").classList.remove("show");
+}
