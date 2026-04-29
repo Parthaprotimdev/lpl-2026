@@ -60,6 +60,13 @@ function adminLogin() {
     alert("Wrong Password!");
   }
 }
+function openTournament() {
+  document.getElementById("tournamentModal").classList.remove("hidden");
+}
+
+function closeTournament() {
+  document.getElementById("tournamentModal").classList.add("hidden");
+}
 
 // ================= LIVE SCORE =================
 setInterval(() => {
@@ -82,3 +89,23 @@ function closeCommittee() {
   document.getElementById("committeeSection").classList.add("hidden");
   document.getElementById("committeeSection").classList.remove("show");
 }
+let runA = 0;
+let runB = 0;
+let over = 0.0;
+
+function updateLive() {
+  document.getElementById("scoreA").innerText = runA + "/2";
+  document.getElementById("scoreB").innerText = runB + "/1";
+  document.getElementById("oversA").innerText = "Overs: " + over;
+}
+
+// demo animation (fake live feel)
+setInterval(() => {
+  runA += Math.floor(Math.random() * 2);
+  runB += Math.floor(Math.random() * 2);
+  over += 0.1;
+
+  over = parseFloat(over.toFixed(1));
+
+  updateLive();
+}, 3000);

@@ -19,8 +19,8 @@
 
       <nav class="nav-links">
         <a href="#">Home</a>
-        <a href="#">Tournament</a>
-        <a href="#">Live</a>
+        <a href="#" onclick="openTournament()">Tournament</a>
+        <a href="#" onclick="openLive()">Tournament</a>
 
         <a href="#" onclick="openCommittee()">Committee</a>
 
@@ -62,27 +62,38 @@
     </section>
 
     <!-- LIVE MATCH -->
-    <section class="live">
-      <h2>🔥 LIVE MATCH</h2>
+    <!-- LIVE MATCH PRO SCOREBOARD -->
+<section class="live">
 
-      <div class="scoreboard">
-        <div class="team">
-          <h3 id="teamA">Ward 08</h3>
-          <p id="scoreA">0</p>
-        </div>
+  <div class="live-header">
+    🔴 LIVE • 14 Overs Match
+  </div>
 
-        <div class="vs">VS</div>
+  <div class="scoreboard-pro">
 
-        <div class="team">
-          <h3 id="teamB">Ward 05</h3>
-          <p id="scoreB">0</p>
-        </div>
-      </div>
+    <div class="team-box">
+      <h2 id="teamA">Ward 08</h2>
+      <p class="score" id="scoreA">0/0</p>
+      <span class="overs-small" id="oversA">Overs: 0.0</span>
+    </div>
 
-      <p class="overs" id="overs">Overs: 0.0</p>
+    <div class="vs-circle">VS</div>
 
-      <div class="live-badge">● LIVE</div>
-    </section>
+    <div class="team-box">
+      <h2 id="teamB">Ward 05</h2>
+      <p class="score" id="scoreB">0/0</p>
+      <span class="overs-small" id="oversB">Overs: 0.0</span>
+    </div>
+
+  </div>
+
+  <div class="match-info">
+    <p>🏏 Format: 14 Overs Match</p>
+    <p>⚡ Current Run Rate: 0.00</p>
+    <p>🎯 Target: Coming Soon</p>
+  </div>
+
+</section>
 
     <!-- REGISTRATION -->
     <section class="form">
@@ -169,6 +180,43 @@
 
       <button class="close-btn" onclick="closeCommittee()">Close</button>
     </section>
+    <!-- TOURNAMENT MODAL -->
+    <div id="tournamentModal" class="tournament-modal hidden">
+      <div class="tournament-box">
+        <h1>🏏 LPL 2026 Tournament</h1>
+
+        <div class="tournament-grid">
+          <div class="t-card">
+            <h2>📅 UPCOMING</h2>
+            <p>Start: UPCOMING</p>
+            <p>Final: 30 May 2026</p>
+          </div>
+
+          <div class="t-card">
+            <h2>🏆 Format</h2>
+            <p>Knockout Stage</p>
+            <p>8 Teams</p>
+          </div>
+
+          <div class="t-card">
+            <h2>⚡ Rules</h2>
+            <p>14 Overs Match</p>
+            <p>Fair Play Required</p>
+          </div>
+
+          <div class="t-card ">
+            <h2>🔥 Prize</h2>
+            <p>Champion: Premium Fridge</p>
+            <p>Runner-up: Mini Fridge</p>
+          </div>
+        </div>
+        
+      </div>
+
+        <button class="close-btn" onclick="closeTournament()">Close</button>
+      </div>
+    </div>
+
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-box">
